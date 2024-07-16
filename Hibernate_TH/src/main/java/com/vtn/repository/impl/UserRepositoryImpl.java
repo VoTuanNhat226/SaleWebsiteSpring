@@ -5,8 +5,7 @@
 package com.vtn.repository.impl;
 
 import com.vtn.hibernate_th.HibernateUtils;
-import com.vtn.pojo.Category;
-import java.util.List;
+import com.vtn.pojo.User;
 import javax.persistence.Query;
 import org.hibernate.Session;
 
@@ -14,11 +13,13 @@ import org.hibernate.Session;
  *
  * @author tuann
  */
-public class CategoryRepositoryImpl {
-    public List<Category> getCategory() {
-        try (Session s = HibernateUtils.getFactory().openSession()) {
-            Query q = s.createQuery("From Category");
-            return q.getResultList();
+public class UserRepositoryImpl {
+    public User getUserByUsername(String username) {
+        try(Session s = HibernateUtils.getFactory().openSession()) {
+            Query q = s.createNamedQuery("User.findByUsername");
+            q.setParameter("username", username);
+            
+            return (User) q.getSingleResult();
         }
     }
 }

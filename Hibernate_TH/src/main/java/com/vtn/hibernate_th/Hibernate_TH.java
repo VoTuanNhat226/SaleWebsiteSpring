@@ -21,8 +21,8 @@ import java.util.Map;
 public class Hibernate_TH {
 
     public static void main(String[] args) {
-            StatsRepositoryImpl s = new StatsRepositoryImpl();
-            s.statsRevenueByPeroid(2020, "QUARTER").forEach(o -> System.out.printf("%s: %d\n", o[0],o[1]));
+//            StatsRepositoryImpl s = new StatsRepositoryImpl();
+//            s.statsRevenueByPeroid(2020, "QUARTER").forEach(o -> System.out.printf("%s: %d\n", o[0],o[1]));
         
 //        List<Cart> carts = new ArrayList<>();
 //        carts.add(new Cart(1, "A",2, 100l));
@@ -30,8 +30,8 @@ public class Hibernate_TH {
 //        ReceiptRepositoryImpl receipt = new ReceiptRepositoryImpl();
 //        receipt.addReceipt(carts);
         
-//        CategoryRepositoryImpl s = new CategoryRepositoryImpl();
-//        s.getCategory().forEach(c -> System.out.println(c.getName()));
+        CategoryRepositoryImpl s = new CategoryRepositoryImpl();
+        s.getCategory().forEach(c -> System.out.println(c.getName()));
 //
 //        Map<String, String> params = new HashMap<>();
 //        params.put("q", "iPhone");

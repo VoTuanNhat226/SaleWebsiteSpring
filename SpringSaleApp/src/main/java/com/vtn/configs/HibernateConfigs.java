@@ -28,7 +28,7 @@ public class HibernateConfigs {
     @Autowired
     private Environment env;
 
-     @Bean
+    @Bean
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean sessionFactory
                 = new LocalSessionFactoryBean();
@@ -40,8 +40,7 @@ public class HibernateConfigs {
         return sessionFactory;
     }
 
-
-     @Bean
+    @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource
                 = new DriverManagerDataSource();
@@ -55,14 +54,14 @@ public class HibernateConfigs {
         return dataSource;
     }
 
-     private Properties hibernateProperties() {
+    private Properties hibernateProperties() {
         Properties props = new Properties();
         props.put(DIALECT, env.getProperty("hibernate.dialect"));
         props.put(SHOW_SQL, env.getProperty("hibernate.showSql"));
         return props;
     }
 
-   @Bean
+    @Bean
     public HibernateTransactionManager transactionManager() {
         HibernateTransactionManager transactionManager
                 = new HibernateTransactionManager();

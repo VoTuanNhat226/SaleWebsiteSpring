@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/security/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0866ff">
     <div class="container-fluid">
@@ -25,6 +26,22 @@
                         <a class="nav-link" href="${cateUrl}" style=" color:#fff">${c.name}</a>
                     </li>
                 </c:forEach>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/stats"/>" style=" color:#fff">Thong ke</a>
+                </li>
+                <s:authorize access="!isAuthenticated()">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value="/login"/>" style=" color:#fff">Dang nhap</a>
+                    </li>
+                </s:authorize>
+                <s:authorize access="isAuthenticated()">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value="/"/>" style=" color:#fff">Welcome <s:authentication property="principal.username"/></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value="/logout"/>" style=" color:#fff">Dang xuat</a>
+                    </li>
+                </s:authorize>
             </ul>
         </div>
     </div>

@@ -4,13 +4,15 @@
  */
 package com.vtn.service;
 
-import com.vtn.pojo.Category;
 import java.util.List;
 
 /**
  *
  * @author tuann
  */
-public interface CategoryService {
-    public List<Category> getCategory();
+public interface StatsService {
+
+    List<Object[]> statsRevenueByProduct();
+
+    List<Object[]> statsRevenueByPeroid(int year, String peroid);
 }

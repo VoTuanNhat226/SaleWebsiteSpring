@@ -25,6 +25,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     @Autowired
     private LocalSessionFactoryBean factory;
 
+    @Override
     public List<Category> getCategory() {
         Session s = this.factory.getObject().getCurrentSession();
         Query q = s.createQuery("From Category");

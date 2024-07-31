@@ -29,7 +29,8 @@
             </div>
         </form>
     </div>
-    <div class="col-md-7 col-12">
+    <div class="col-md-9 col-12">
+        <a href="<c:url value="/products" />" class="btn btn-success mb-3" >Them san pham</a>
         <table class="table table-striped">
             <tr>
                 <th>ID</th>
@@ -56,8 +57,5 @@
                 </tr>
             </c:forEach>
         </table>
-    </div>
-    <div class="col-md-2 col-12">
-        <a href="<c:url value="/products" />" class="btn btn-success mb-3" >Them san pham</a>
     </div>
 </div>

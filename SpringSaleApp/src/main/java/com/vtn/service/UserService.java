@@ -4,13 +4,13 @@
  */
 package com.vtn.service;
 
-import com.vtn.pojo.Category;
-import java.util.List;
+import com.vtn.pojo.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  *
  * @author tuann
  */
-public interface CategoryService {
-    public List<Category> getCategory();
+public interface UserService  extends UserDetailsService{
+    User getUserByUsername(String username);
 }
